@@ -1,0 +1,9 @@
+FROM rust
+
+WORKDIR /workspaces/app
+
+COPY . .
+
+RUN cargo install --path .
+
+CMD ["app"]

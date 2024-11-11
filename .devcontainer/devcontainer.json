@@ -1,0 +1,19 @@
+{
+    "build": {
+        "dockerfile": "../Dockerfile.dev"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer"
+            ]
+        }
+    },
+    "runArgs": [
+        "-h",
+        "${localWorkspaceFolderBasename}"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/app,type=bind",
+    "workspaceFolder": "/workspaces/app",
+    "postCreateCommand": "rustup component add rustfmt"
+}
